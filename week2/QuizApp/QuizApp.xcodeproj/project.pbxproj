@@ -63,7 +63,6 @@
 				D38D43B8221DAA570032F564 /* Controller */,
 				D38D439B221D92510032F564 /* Assets.xcassets */,
 				D38D439D221D92510032F564 /* LaunchScreen.storyboard */,
-				D38D4396221D924F0032F564 /* ViewController.swift */,
 				D38D43A0221D92510032F564 /* Info.plist */,
 			);
 			path = QuizApp;
@@ -72,6 +71,7 @@
 		D38D43B8221DAA570032F564 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D38D4396221D924F0032F564 /* ViewController.swift */,
 				D38D4394221D924F0032F564 /* AppDelegate.swift */,
 			);
 			path = Controller;
