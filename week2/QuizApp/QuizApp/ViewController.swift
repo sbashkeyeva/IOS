@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let firstQuestion = allQuestions.list[0]
-        questionLabel.text = firstQuestion.questionText
+//        let firstQuestion = allQuestions.list[0]
+        questionLabel.numberOfLines=0
+//        questionLabel.text = firstQuestion.questionText
+        nextQuestion()
     }
 
     @IBAction func answerPressed(_ sender: AnyObject) {
@@ -50,8 +52,22 @@ class ViewController: UIViewController {
         }else{
             questionNumber=0
             print("End of quiz")
+            let alert=UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
+            let restartAction=UIAlertAction(title: "Restart", style: .default, handler: { (UIAlertAction) in
+                self.startOver()
+            })
+            alert.addAction(restartAction)
+            present(alert,animated: true, completion: nil)
+//            let alert=UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
+//            present(alert,animated: true, completion: nil)
+            
         }
     }
+    func startOver() {
+        questionNumber=0
+        nextQuestion()
+    }
+    
 
 }
 
