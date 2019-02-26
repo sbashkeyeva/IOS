@@ -8,14 +8,15 @@
 
 import Foundation
 
-enum Answer {
-    case A
-    case B
-    case C
-    case D
-}
+
 
 class Problem {
+    enum Answer {
+        case A
+        case B
+        case C
+        case D
+    }
     var problemText: String
     var answer:Answer
     var variantA:String
