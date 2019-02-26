@@ -61,6 +61,7 @@ class MusicViewController: UIViewController {
     func showProblem(){
         let problem = manager.getCurrentProblem()
         problemLabel.text=problem.problemText
+        image.image=UIImage(named:problem.image)
         aButton.setTitle(problem.variantA, for: .normal)
         bButton.setTitle(problem.variantB, for: .normal)
         cButton.setTitle(problem.variantC, for: .normal)

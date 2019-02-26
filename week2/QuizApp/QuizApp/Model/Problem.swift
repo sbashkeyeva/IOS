@@ -23,7 +23,9 @@ class Problem {
     var variantB: String
     var variantC:String
     var variantD:String
-    init(problemText:String,variantA:String, variantB:String,variantC:String, variantD:String, answer:Answer) {
+    var image:String
+    init(image:String,problemText:String,variantA:String, variantB:String,variantC:String, variantD:String, answer:Answer) {
+        self.image=image
         self.problemText=problemText
         self.answer=answer
         self.variantA=variantA
