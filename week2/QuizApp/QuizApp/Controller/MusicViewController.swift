@@ -17,8 +17,6 @@ class MusicViewController: UIViewController {
     @IBOutlet weak var cButton: UIButton!
     @IBOutlet weak var dButton: UIButton!
     var pickedAnswer:Bool=false
-    var problemNumber:Int=0
-    var score:Int=0
     
     var manager = QuizManager()
     
@@ -32,17 +30,21 @@ class MusicViewController: UIViewController {
     }
     @IBAction func answerPressed(_ sender: UIButton!) {
         if (checkAnswer(sender.tag)) {
+            manager.score+=1
             sender.backgroundColor = UIColor.green
         } else {
+            
             sender.backgroundColor = UIColor.red
+            
         }
-//        problemNumber+=1
+        
         manager.currentIndex+=1
         nextProblem()
     }
     func checkAnswer(_ tag: Int) -> Bool{
 //        let correctAnswer=manager.getCurrentProblem().answer
         if tag==1{
+            aButton.backgroundColor=UIColor.green
             return manager.getCurrentProblem().answer==Problem.Answer.A
         }
         if tag==2{
@@ -66,6 +68,20 @@ class MusicViewController: UIViewController {
 
     }
     func nextProblem(){
+        if manager.currentIndex<=15{
+            showProblem()
+        }else{
+            let alert=UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
+            let restart=UIAlertAction(title: "Restart", style: .default, handler:{ (UIAlertAction) in
+                self.restart()
+            })
+            alert.addAction(restart)
+            present(alert,animated: true, completion: nil)
+        }
+    }
+    func restart(){
+        manager.currentIndex=0
+        manager.score=0
         showProblem()
     }
     /*
