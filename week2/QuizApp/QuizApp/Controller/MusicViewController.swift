@@ -18,6 +18,7 @@ class MusicViewController: UIViewController {
     @IBOutlet weak var dButton: UIButton!
     var pickedAnswer:Bool=false
     var correctAns:Problem.Answer=Problem.Answer.B
+    var wrongAnswer:Int = 0
     
     var manager = QuizManager()
     
@@ -37,7 +38,7 @@ class MusicViewController: UIViewController {
             manager.score+=1
             sender.backgroundColor = UIColor.green
         } else {
-            
+            wrongAnswer+=1
             sender.backgroundColor = UIColor.red
 
         }
@@ -87,7 +88,10 @@ class MusicViewController: UIViewController {
         nextProblem()
     }
     func resetButtons() {
-        aButton.backgroundColor = UIColor.white
+        aButton.backgroundColor = UIColor.yellow
+        bButton.backgroundColor=UIColor.yellow
+        cButton.backgroundColor=UIColor.yellow
+        dButton.backgroundColor=UIColor.yellow
     }
     func checkAnswer(_ tag: Int) -> Bool{
 //        let correctAnswer=manager.getCurrentProblem().answer
@@ -119,6 +123,7 @@ class MusicViewController: UIViewController {
         bButton.setTitle(problem.variantB, for: .normal)
         cButton.setTitle(problem.variantC, for: .normal)
         dButton.setTitle(problem.variantD, for: .normal)
+        resetButtons()
 
     }
     func nextProblem(){
@@ -130,21 +135,20 @@ class MusicViewController: UIViewController {
             
         }else{
             manager.currentIndex=0
-            let alert=UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
-            let restart=UIAlertAction(title: "Restart", style: .default, handler:{ (UIAlertAction) in
-                self.restart()
-            })
-            alert.addAction(restart)
-            present(alert,animated: true, completion: nil)
+//            let alert=UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
+//            let restart=UIAlertAction(title: "Restart", style: .default, handler:{ (UIAlertAction) in
+//                self.restart()
+//            })
+//            alert.addAction(restart)
+//            present(alert,animated: true, completion: nil)
+            let newController = storyboard?.instantiateViewController(withIdentifier: "scoreBoard")
+            self.present(newController!,animated: true,completion: nil)
+            
         }
         
     }
     func updateButton(correctAns:Problem.Answer, sender: UIButton){
         sender.backgroundColor=UIColor.green
-//        aButton.backgroundColor=UIColor.yellow
-//        bButton.backgroundColor=UIColor.yellow
-//        cButton.backgroundColor=UIColor.yellow
-//        dButton.backgroundColor=UIColor.yellow
     }
     func restart(){
         manager.currentIndex=0
