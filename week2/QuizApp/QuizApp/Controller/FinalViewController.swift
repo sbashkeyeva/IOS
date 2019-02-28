@@ -11,16 +11,17 @@ import UIKit
 class FinalViewController: UIViewController  {
 
     @IBOutlet weak var scoreLabel: UILabel!
-    var manager = QuizManager()
+    var finalScore=""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         showResult()
         // Do any additional setup after loading the view.
     }
     func showResult(){
-        scoreLabel.text="Your score is: \(manager.score)"
+        scoreLabel.text="Your final score is: "+finalScore
     }
-    
+     
 
     /*
     // MARK: - Navigation

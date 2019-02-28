@@ -19,6 +19,9 @@ class MusicViewController: UIViewController {
     var pickedAnswer:Bool=false
     var correctAns:Problem.Answer=Problem.Answer.B
     var wrongAnswer:Int = 0
+    var correctAnswer:Int = 0
+    var str=""
+    
     
     var manager = QuizManager()
     
@@ -36,6 +39,7 @@ class MusicViewController: UIViewController {
         
         if (checkAnswer(sender.tag)) {
             manager.score+=1
+            correctAnswer+=1
             sender.backgroundColor = UIColor.green
         } else {
             wrongAnswer+=1
@@ -128,7 +132,7 @@ class MusicViewController: UIViewController {
     }
     func nextProblem(){
         if manager.currentIndex<=15{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                 self.showProblem()
             })
             
@@ -141,8 +145,17 @@ class MusicViewController: UIViewController {
 //            })
 //            alert.addAction(restart)
 //            present(alert,animated: true, completion: nil)
-            let newController = storyboard?.instantiateViewController(withIdentifier: "scoreBoard")
-            self.present(newController!,animated: true,completion: nil)
+            print(correctAnswer)
+            self.str=String(correctAnswer)
+            print(str)
+            performSegue(withIdentifier: "final", sender: self)
+            
+//            func prepare(for segue: UIStoryboardSegue,sender:Any?){
+//                var vc = segue.destination as! FinalViewController
+//                vc.finalScore=self.str
+//            }
+//            let newController = storyboard?.instantiateViewController(withIdentifier: "scoreBoard")
+//            self.present(newController!,animated: true,completion: nil)
             
         }
         
@@ -164,5 +177,9 @@ class MusicViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! FinalViewController
+        vc.finalScore=self.str
+    }
 
 }

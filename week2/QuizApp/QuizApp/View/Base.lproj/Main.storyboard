@@ -220,7 +220,7 @@
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fC0-HM-TS2" kind="presentation" id="kBi-J5-d1Q"/>
+                                    <segue destination="fC0-HM-TS2" kind="presentation" identifier="final" id="kBi-J5-d1Q"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -256,11 +256,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yl-r8-7Ut">
-                                <rect key="frame" x="33" y="66" width="44" height="30"/>
+                                <rect key="frame" x="24" y="53" width="84" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt;Back">
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ehO-Ez-vj5" kind="presentation" id="dSF-Wf-moq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.39875979540000001" green="0.67563089549999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -341,6 +344,6 @@
         <image name="turtle" width="266.66665649414062" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FHF-v1-0eP"/>
+        <segue reference="dSF-Wf-moq"/>
     </inferredMetricsTieBreakers>
 </document>
