@@ -9,7 +9,9 @@
 import UIKit
 
 class MusicViewController: UIViewController {
-
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var problemLabel: UILabel!
     @IBOutlet weak var aButton: UIButton!
@@ -59,34 +61,7 @@ class MusicViewController: UIViewController {
         }
         
 //
-//        switch sender.tag {
-//        case 1:
-//            if (checkAnswer(sender.tag)){
-//                sender.backgroundColor=UIColor.green
-//            } else{
-//                sender.backgroundColor=UIColor.red
-//            }
-//        case 2:
-//            if (checkAnswer(sender.tag)){
-//                sender.backgroundColor=UIColor.green
-//            } else{
-//                sender.backgroundColor=UIColor.red
-//            }
-//        case 3:
-//            if (checkAnswer(sender.tag)){
-//                sender.backgroundColor=UIColor.green
-//            } else{
-//                sender.backgroundColor=UIColor.red
-//            }
-//        case 4:
-//            if (checkAnswer(sender.tag)){
-//                sender.backgroundColor=UIColor.green
-//            } else{
-//                sender.backgroundColor=UIColor.red
-//            }
-//        default:
-//            print("babe")
-//        }
+//
         manager.currentIndex+=1
        
         nextProblem()
@@ -131,37 +106,31 @@ class MusicViewController: UIViewController {
 
     }
     func nextProblem(){
-        if manager.currentIndex<=15{
+        if manager.currentIndex<=13{
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                 self.showProblem()
+                self.updateUI()
             })
-            
             
         }else{
             manager.currentIndex=0
-//            let alert=UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
-//            let restart=UIAlertAction(title: "Restart", style: .default, handler:{ (UIAlertAction) in
-//                self.restart()
-//            })
-//            alert.addAction(restart)
-//            present(alert,animated: true, completion: nil)
             print(correctAnswer)
             self.str=String(correctAnswer)
             print(str)
             performSegue(withIdentifier: "final", sender: self)
-            
-//            func prepare(for segue: UIStoryboardSegue,sender:Any?){
-//                var vc = segue.destination as! FinalViewController
-//                vc.finalScore=self.str
-//            }
-//            let newController = storyboard?.instantiateViewController(withIdentifier: "scoreBoard")
-//            self.present(newController!,animated: true,completion: nil)
             
         }
         
     }
     func updateButton(correctAns:Problem.Answer, sender: UIButton){
         sender.backgroundColor=UIColor.green
+    }
+    func updateUI() {
+        scoreLabel.text="Score: \(correctAnswer)"
+        progressLabel.text="\(manager.currentIndex+1) /13"
+        progressBar.frame.size.width=(view.frame.size.width/13)*CGFloat(manager.currentIndex+1)
+        
+        
     }
     func restart(){
         manager.currentIndex=0
@@ -178,7 +147,7 @@ class MusicViewController: UIViewController {
     }
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! FinalViewController
+        let vc = segue.destination as! FinalViewController
         vc.finalScore=self.str
     }
 

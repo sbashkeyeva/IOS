@@ -64,8 +64,6 @@ class ViewController: UIViewController {
             })
             alert.addAction(restartAction)
             present(alert,animated: true, completion: nil)
-//            let alert=UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
-//            present(alert,animated: true, completion: nil)
             
         }
     }
