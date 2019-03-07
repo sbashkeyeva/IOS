@@ -18,7 +18,7 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationItem.leftBarButtonItem=self.editButtonItem
         tableView.delegate=self
         tableView.dataSource=self
-        contacts.append(Contact.init(firsname: "Mama", lastname: "Papa", phone: "7878787878", tagColor: .blue))
+        contacts.append(Contact.init(firstname: "Mama", lastname: "Papa", phone: "7878787878", tagColor: .blue))
         // Do any additional setup after loading the view.
     }
     override func setEditing(_ editing: Bool, animated: Bool) {

@@ -100,21 +100,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JUz-Er-16c">
-                                <rect key="frame" x="24" y="374" width="327" height="204"/>
+                                <rect key="frame" x="24" y="360" width="327" height="254"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sje-ll-J5X">
-                                    <size key="itemSize" width="158" height="118"/>
+                                    <size key="itemSize" width="107" height="79"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tagCell" id="szG-Lv-pfb" customClass="TagCollectionViewCell" customModule="GetContact" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="158" height="118"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="107" height="79"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="158" height="118"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="107" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4v-fD-pqD">
@@ -122,8 +122,8 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
+                                                        <action selector="tagTapped:" destination="YLD-fm-b8c" eventType="touchUpInside" id="BAL-3J-RVV"/>
                                                         <action selector="tagTapped:" destination="szG-Lv-pfb" eventType="touchUpInside" id="Gae-3d-o5W"/>
-                                                        <action selector="tagTapped:" destination="YLD-fm-b8c" eventType="touchUpInside" id="I75-Cb-Hfr"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

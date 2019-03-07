@@ -15,36 +15,44 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var delegate: AddContactDelegate?
     var contacts=[Contact]()
-    
+    var color: UIColor=UIColor.green
+    var tagColor:Contact.TagColor=Contact.TagColor.green
+    var arr = [Contact.TagColor.AllCases]()
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var firstnameField: UITextField!
     @IBOutlet weak var lastnameField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
-    var tagColor:Contact.TagColor=Contact.TagColor.green
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource=self
         collectionView.delegate=self
         let addButton = UIBarButtonItem.init(title: "Add", style: .done, target: self, action: #selector(addTapped))
         self.navigationItem.rightBarButtonItem=addButton
-        contacts.append(Contact.init(firsname: "Hey", lastname: "Krasavica", phone: "888", tagColor: .green))
+        contacts.append(Contact.init(firstname: "Hey", lastname: "Krasavica", phone: "888", tagColor: .green))
         // Do any additional setup after loading the view.
     }
-    @IBAction func tagTapped(_ sender: UIButton!) {
-        switch tagColor {
-        case Contact.TagColor.blue:
-            sender.backgroundColor=UIColor.blue
-        case Contact.TagColor.red:
-            sender.backgroundColor=UIColor.red
-        case Contact.TagColor.orange:
-            sender.backgroundColor=UIColor.orange
-        case Contact.TagColor.green:
-            sender.backgroundColor=UIColor.green
-        case Contact.TagColor.yellow:
-            sender.backgroundColor=UIColor.yellow
-        }
-
+    
+    @IBAction func tagTapped(_ sender: Any) {
+        
     }
+    
+    //    @IBAction func tagTapped(_ sender: UIButton!) {
+////        switch tagColor {
+////        case Contact.TagColor.blue:
+////            sender.backgroundColor=UIColor.blue
+////        case Contact.TagColor.red:
+////            sender.backgroundColor=UIColor.red
+////        case Contact.TagColor.orange:
+////            sender.backgroundColor=UIColor.orange
+////        case Contact.TagColor.green:
+////            sender.backgroundColor=UIColor.green
+////        case Contact.TagColor.yellow:
+////            sender.backgroundColor=UIColor.yellow
+////        }
+//        color=sender.backgroundColor ?? UIColor.clear
+//
+//    }
     @objc func addTapped(){
         guard firstnameField.text != "" else{
             let alert=UIAlertController(title: "Error", message: "Fill out your name", preferredStyle: .alert)
@@ -67,14 +75,14 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
             present(alert, animated: true, completion: nil)
             return
         }
-        let contact = Contact.init(firsname: firstnameField.text ?? "", lastname: lastnameField.text ?? "", phone: phoneField.text ?? "", tagColor: tagColor)
+        let contact = Contact.init(firstname: firstnameField.text ?? "", lastname: lastnameField.text ?? "", phone: phoneField.text ?? "", tagColor: tagColor)
         delegate?.didCreateContact(contact: contact)
         self.navigationController?.popViewController(animated: true)
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return contacts.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
