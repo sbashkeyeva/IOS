@@ -75,19 +75,17 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
 //        cell.checkImage.image=UIImage(named: "ic-check")
         cell.setTagColor(tagColors[indexPath.item])
         cell.checkImage.isHidden=true
-        if cell.isSelected{
-            if color==tagColors[indexPath.item]{
-                cell.isHidden=false
-                cell.checkImage.image=UIImage(named: "ic-check")
-            }
-
-        }else{
-            cell.checkImage.isHidden=true
+        
+        if color==tagColors[indexPath.item]{
+            cell.checkImage.isHidden=false
+            cell.checkImage.image=UIImage(named: "ic-check")
         }
-//        else{
-//            cell.checkImage.isHidden=true
-//
-//        }
+
+        
+        else{
+            cell.checkImage.isHidden=true
+
+        }
         
 //        if cell.isSelected{
 //            cell.checkImage.image=UIImage(named: "ic-check")
@@ -95,9 +93,10 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        color=tagColors[indexPath.item]
-        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagCollectionViewCell
-        cell.isSelected=true
+        color=tagColors[indexPath.row]
+        print(color)
+//        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagCollectionViewCell
+//        cell.isSelected=true
 //        if indexPath.item==0{
 //            color = .red
 ////            color=UIColor.red
@@ -117,7 +116,7 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
 //            color = .orange
 ////            color=UIColor.orange
 //        }
-//        collectionView.reloadData()
+        collectionView.reloadData()
     }
 
     /*

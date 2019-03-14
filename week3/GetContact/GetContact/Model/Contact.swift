@@ -32,48 +32,39 @@ enum TagColor : Int, CaseIterable{
         }
     }
 }
-class Contact{
+class Contact:NSObject, NSCoding{
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(firstname, forKey: firstNameKey)
+        aCoder.encode(lastname, forKey: lastNameKey)
+        aCoder.encode(phone, forKey: phoneKey)
+        aCoder.encode(tagColor, forKey: tagKey)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.firstname = aDecoder.decodeObject(forKey: firstNameKey) as? String ?? ""
+        self.lastname = aDecoder.decodeObject(forKey: lastNameKey) as? String ?? ""
+        self.phone = aDecoder.decodeObject(forKey: phoneKey) as? String ?? ""
+        self.tagColor = aDecoder.decodeObject(forKey: tagKey) as! TagColor
+    }
+    
     
     let defaults = UserDefaults.standard
     var firstname:String
     var lastname:String
     var phone:String
     var tagColor:TagColor
+    let firstNameKey = "firstname"
+    let lastNameKey = "lastname"
+    let phoneKey = "phone"
+    let tagKey = "tag"
     init(firstname:String, lastname:String,phone:String, tagColor:TagColor ) {
         self.firstname=firstname
         self.lastname=lastname
         self.phone=phone
         self.tagColor=tagColor
     }
-    static func save(_ contacts: [Contact]){
-        let defaults = UserDefaults.standard
-        var firstnames=[String]()
-        var lastnames=[String]()
-        var phones=[String]()
-        var tagColors=[TagColor]()
-        for contact in contacts {
-            firstnames.append(contact.firstname)
-            lastnames.append(contact.lastname)
-            phones.append(contact.phone)
-            tagColors.append(contact.tagColor)
-        }
-        defaults.set(firstnames, forKey: "firstnames")
-        defaults.set(lastnames, forKey: "lastnames")
-        defaults.set(phones, forKey: "phones")
-        defaults.set(tagColors, forKey: "tags")
-    }
-    static func oneSave(contact: Contact){
-        var contacts=Contact.get()
-        contacts.append(contact)
-        Contact.save(contacts)
-    }
-    static func get() -> [Contact]{
-        var contacts=[Contact]()
-        let defaults = UserDefaults.standard
-        let firstname=defaults.stringArray(forKey: "firstnames") ?? [String]()
-        let lastname=defaults.stringArray(forKey: "lastnames") ?? [String]()
-        let phone=defaults.stringArray(forKey: "phones") ?? [String]()
-        let tag = defaults.object(forKey: "tags")
+   
+   
 //        for index in 0..<firstname.count{
 //            let contact=Contact(firstname: firstname[index], lastname: lastname[index], phone: phone[index], tagColor: tag as! TagColor )
 //            contacts.append(contact)
@@ -81,6 +72,5 @@ class Contact{
 //        for index in 0..<firstname.count {
 //            let contact=Contact(firstname: firstname[index], lastname: lastname[index], phone: phone[index], tagColor: tagColor[index])
 //        }
-        return contacts
-    }
+    
 }

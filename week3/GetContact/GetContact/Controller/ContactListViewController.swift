@@ -11,6 +11,7 @@ import UIKit
 class ContactListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var contacts=[Contact]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        contacts=Contact.get()

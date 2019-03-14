@@ -23,12 +23,13 @@ class PhotoService{
             response in
             switch response.result {
             case .success(let value):
-                print(value)
+//                print(value)
                 let photos=JSON(value)["photos"]["photo"].arrayValue
-                
+//                print(photos)
                 var result=[Photo]()
                 for json in photos{
                     result.append(Photo.init(json: json))
+//                    print(result)
                 }
                 success(result)
             case .failure(let error):
@@ -50,6 +51,7 @@ class PhotoService{
             response in
             switch response.result{
             case .success(let value):
+                print(value)
                 let result=PhotoInfo.init(json:JSON(value)["photo"])
                 success(result)
             case .failure(let error):
