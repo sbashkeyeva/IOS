@@ -39,7 +39,12 @@ class ListViewController: UIViewController,UICollectionViewDelegate, UICollectio
         cell.setValue(photos[indexPath.row].url)
         return cell
     }
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "PhotoViewController") as! PhotoViewController
+        controller.photo_id=photos[indexPath.row].id
+        controller.photo_url=photos[indexPath.row].url
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     /*
     // MARK: - Navigation
 
