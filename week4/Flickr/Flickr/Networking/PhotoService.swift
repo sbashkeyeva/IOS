@@ -46,7 +46,19 @@ class PhotoService{
         param["photo_id"] = photo_id
         param["format"] = "json"
         param["nojsoncallback"] = "1"
+        Alamofire.request(url!, parameters:param, headers:nil) .responseJSON {
+            response in
+            switch response.result{
+            case .success(let value):
+                let result=PhotoInfo.init(json:JSON(value)["photo"])
+                success(result)
+            case .failure(let error):
+                failure(error)
+            }
+            
+        }
     }
+    
         
         
 }

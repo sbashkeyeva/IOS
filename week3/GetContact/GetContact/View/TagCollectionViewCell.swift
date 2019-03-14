@@ -30,12 +30,23 @@ class TagCollectionViewCell: UICollectionViewCell {
             
             
         }
+    
         
 //        if arr.count==index{
 //            tagButton.backgroundColor=color
 //        }
        // tagButton.backgroundColor=arr[index]
         
+    }
+    override var isSelected: Bool{
+        didSet{
+            if self.isSelected {
+                checkImage.isHidden=true
+            }
+            else{
+                checkImage.isHidden=false
+            }
+        }
     }
     
 }

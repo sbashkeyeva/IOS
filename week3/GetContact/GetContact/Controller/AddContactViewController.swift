@@ -75,40 +75,49 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
 //        cell.checkImage.image=UIImage(named: "ic-check")
         cell.setTagColor(tagColors[indexPath.item])
         cell.checkImage.isHidden=true
-//        if color==tagColors[indexPath.item]{
-//            cell.checkImage.image=UIImage(named: "ic-check")
-//        }
+        if cell.isSelected{
+            if color==tagColors[indexPath.item]{
+                cell.isHidden=false
+                cell.checkImage.image=UIImage(named: "ic-check")
+            }
+
+        }else{
+            cell.checkImage.isHidden=true
+        }
 //        else{
+//            cell.checkImage.isHidden=true
 //
 //        }
-        if cell.isSelected{
-            cell.checkImage.image=UIImage(named: "ic-check")
-        }
+        
+//        if cell.isSelected{
+//            cell.checkImage.image=UIImage(named: "ic-check")
+//        }
         return cell
     }
-    var yoyo: Bool=false
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if indexPath.item==0{
-            color = .red
-//            color=UIColor.red
-        }
-        if indexPath.item==1{
-            color = .blue
-        }
-        if indexPath.item==2{
-            color = .green
-//            color=UIColor.yellow
-        }
-        if indexPath.item==3{
-            color = .yellow
-//            color=UIColor.green
-        }
-        if indexPath.item==4{
-            color = .orange
-//            color=UIColor.orange
-        }
-        collectionView.reloadData()
+        color=tagColors[indexPath.item]
+        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagCollectionViewCell
+        cell.isSelected=true
+//        if indexPath.item==0{
+//            color = .red
+////            color=UIColor.red
+//        }
+//        if indexPath.item==1{
+//            color = .blue
+//        }
+//        if indexPath.item==2{
+//            color = .green
+////            color=UIColor.yellow
+//        }
+//        if indexPath.item==3{
+//            color = .yellow
+////            color=UIColor.green
+//        }
+//        if indexPath.item==4{
+//            color = .orange
+////            color=UIColor.orange
+//        }
+//        collectionView.reloadData()
     }
 
     /*

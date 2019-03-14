@@ -17,6 +17,7 @@
 		D3117ACD223A56E500B806DB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3117ACC223A56E500B806DB /* Photo.swift */; };
 		D3117AD0223A5DA200B806DB /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3117ACF223A5DA200B806DB /* PhotoService.swift */; };
 		D3117AD2223A68F300B806DB /* PhotoDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3117AD1223A68F300B806DB /* PhotoDownloader.swift */; };
+		D3117AD4223A7A0900B806DB /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3117AD3223A7A0900B806DB /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D3117ACC223A56E500B806DB /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		D3117ACF223A5DA200B806DB /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		D3117AD1223A68F300B806DB /* PhotoDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDownloader.swift; sourceTree = "<group>"; };
+		D3117AD3223A7A0900B806DB /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				D3117AC8223A543300B806DB /* ListViewController.swift */,
+				D3117AD3223A7A0900B806DB /* PhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				D3117AD0223A5DA200B806DB /* PhotoService.swift in Sources */,
 				D3117AD2223A68F300B806DB /* PhotoDownloader.swift in Sources */,
 				D3117AB4223A3EA400B806DB /* AppDelegate.swift in Sources */,
+				D3117AD4223A7A0900B806DB /* PhotoViewController.swift in Sources */,
 				D3117AC9223A543300B806DB /* ListViewController.swift in Sources */,
 				D3117ACD223A56E500B806DB /* Photo.swift in Sources */,
 			);
