@@ -13,6 +13,7 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
     var contacts=[Contact]()
     override func viewDidLoad() {
         super.viewDidLoad()
+//        contacts=Contact.get()
         let addButton=UIBarButtonItem.init(title: "Add", style: .done, target: self, action: #selector(addTapped))
         self.navigationItem.rightBarButtonItem=addButton
         self.navigationItem.leftBarButtonItem=self.editButtonItem

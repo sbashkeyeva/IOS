@@ -9,34 +9,28 @@
 import UIKit
 
 class TagCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var checkImage: UIImageView!
     
-    @IBOutlet weak var tagButton: UIButton!
+    //    @IBOutlet weak var tagButton: UIButton!
 //    var arr = Contact.TagColor.AllCases()
-    var arr = Contact.TagColor.allValues
-    var color:UIColor=UIColor.green
- 
-    func setTag(_ index: Int){
-           print(arr)
-        print(index)
-        switch index {
-        case 0:
-            tagButton.backgroundColor=UIColor.red
-            color=UIColor.red
-        case 1:
-            tagButton.backgroundColor=UIColor.blue
-            color=UIColor.blue
-        case 2:
-            tagButton.backgroundColor=UIColor.yellow
-            color=UIColor.yellow
-        case 3:
-            tagButton.backgroundColor=UIColor.green
-            color=UIColor.green
-        case 4:
-            tagButton.backgroundColor=UIColor.orange
-            color=UIColor.orange
-        default:
-            print("hello")
+//    var arr = Contact.TagColor.allValues
+//    var color:UIColor=UIColor.green
+    func setTagColor(_ tagColor: TagColor){
+        switch tagColor {
+        case .red:
+            backgroundColor=UIColor.red
+        case .blue:
+            backgroundColor=UIColor.blue
+        case .yellow:
+            backgroundColor=UIColor.yellow
+        case .green:
+            backgroundColor=UIColor.green
+        case .orange:
+            backgroundColor=UIColor.orange
+            
+            
         }
+        
 //        if arr.count==index{
 //            tagButton.backgroundColor=color
 //        }

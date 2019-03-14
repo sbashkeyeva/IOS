@@ -15,10 +15,11 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var delegate: AddContactDelegate?
     var contacts=[Contact]()
-    var color: UIColor=UIColor.green
-    var tagColor:Contact.TagColor=Contact.TagColor.green
-    var arr = [Contact.TagColor.AllCases]()
+    var color: TagColor = .red
+    var tagColors:[TagColor] = [.red, .blue, .green, .yellow, .orange]
+
     @IBOutlet weak var collectionView: UICollectionView!
+
     @IBOutlet weak var firstnameField: UITextField!
     @IBOutlet weak var lastnameField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
@@ -32,27 +33,8 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
         contacts.append(Contact.init(firstname: "Hey", lastname: "Krasavica", phone: "888", tagColor: .green))
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func tagTapped(_ sender: Any) {
-        
-    }
-    
-    //    @IBAction func tagTapped(_ sender: UIButton!) {
-////        switch tagColor {
-////        case Contact.TagColor.blue:
-////            sender.backgroundColor=UIColor.blue
-////        case Contact.TagColor.red:
-////            sender.backgroundColor=UIColor.red
-////        case Contact.TagColor.orange:
-////            sender.backgroundColor=UIColor.orange
-////        case Contact.TagColor.green:
-////            sender.backgroundColor=UIColor.green
-////        case Contact.TagColor.yellow:
-////            sender.backgroundColor=UIColor.yellow
-////        }
-//        color=sender.backgroundColor ?? UIColor.clear
-//
-//    }
+
+ 
     @objc func addTapped(){
         guard firstnameField.text != "" else{
             let alert=UIAlertController(title: "Error", message: "Fill out your name", preferredStyle: .alert)
@@ -75,7 +57,9 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
             present(alert, animated: true, completion: nil)
             return
         }
-        let contact = Contact.init(firstname: firstnameField.text ?? "", lastname: lastnameField.text ?? "", phone: phoneField.text ?? "", tagColor: tagColor)
+        let contact = Contact.init(firstname: firstnameField.text ?? "", lastname: lastnameField.text ?? "", phone: phoneField.text ?? "", tagColor: color)
+        
+//        Contact.oneSave(contact: contact)
         delegate?.didCreateContact(contact: contact)
         self.navigationController?.popViewController(animated: true)
         
@@ -87,10 +71,45 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagCollectionViewCell
-        cell.setTag(indexPath.row)
+//        var image:UIImage=UIImage(named: "ic-check")
+//        cell.checkImage.image=UIImage(named: "ic-check")
+        cell.setTagColor(tagColors[indexPath.item])
+        cell.checkImage.isHidden=true
+//        if color==tagColors[indexPath.item]{
+//            cell.checkImage.image=UIImage(named: "ic-check")
+//        }
+//        else{
+//
+//        }
+        if cell.isSelected{
+            cell.checkImage.image=UIImage(named: "ic-check")
+        }
         return cell
     }
-    
+    var yoyo: Bool=false
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.item==0{
+            color = .red
+//            color=UIColor.red
+        }
+        if indexPath.item==1{
+            color = .blue
+        }
+        if indexPath.item==2{
+            color = .green
+//            color=UIColor.yellow
+        }
+        if indexPath.item==3{
+            color = .yellow
+//            color=UIColor.green
+        }
+        if indexPath.item==4{
+            color = .orange
+//            color=UIColor.orange
+        }
+        collectionView.reloadData()
+    }
 
     /*
     // MARK: - Navigation

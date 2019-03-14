@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GetContact/Controller/AddContactViewController.swift"
-            timestampString = "573649987.596899"
+            timestampString = "574152487.35501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "addTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,61 +26,106 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GetContact/Controller/AddContactViewController.swift"
-            timestampString = "573649987.5969861"
+            timestampString = "574152487.355509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "AddContactViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GetContact/Controller/AddContactViewController.swift"
-            timestampString = "573649987.5970531"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "AddContactViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GetContact/Controller/AddContactViewController.swift"
-            timestampString = "573649987.597116"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "AddContactViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GetContact/Controller/AddContactViewController.swift"
-            timestampString = "573649987.597176"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "addTapped()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GetContact/View/TagCollectionViewCell.swift"
+            timestampString = "574152487.355839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "TagCollectionViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GetContact.TagCollectionViewCell.__allocating_init(frame: __C.CGRect) -&gt; GetContact.TagCollectionViewCell"
+                  moduleName = "GetContact"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/symbatbashkeyeva/Desktop/IOS/week3/GetContact/GetContact/View/TagCollectionViewCell.swift"
+                  timestampString = "573659544.0251729"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GetContact.TagCollectionViewCell.init(frame: __C.CGRect) -&gt; GetContact.TagCollectionViewCell"
+                  moduleName = "GetContact"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/symbatbashkeyeva/Desktop/IOS/week3/GetContact/GetContact/View/TagCollectionViewCell.swift"
+                  timestampString = "573659544.047249"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "43">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GetContact.TagCollectionViewCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;GetContact.TagCollectionViewCell&gt;"
+                  moduleName = "GetContact"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/symbatbashkeyeva/Desktop/IOS/week3/GetContact/GetContact/View/TagCollectionViewCell.swift"
+                  timestampString = "573659544.052204"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GetContact.TagCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;GetContact.TagCollectionViewCell&gt;"
+                  moduleName = "GetContact"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/symbatbashkeyeva/Desktop/IOS/week3/GetContact/GetContact/View/TagCollectionViewCell.swift"
+                  timestampString = "573659544.057431"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "50">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GetContact.TagCollectionViewCell.__deallocating_deinit"
+                  moduleName = "GetContact"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/symbatbashkeyeva/Desktop/IOS/week3/GetContact/GetContact/View/TagCollectionViewCell.swift"
+                  timestampString = "573659544.0633889"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
