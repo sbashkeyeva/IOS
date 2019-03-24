@@ -16,6 +16,7 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
     var delegate: AddContactDelegate?
     var contacts=[Contact]()
     var color: TagColor = .red
+    
     var tagColors:[TagColor] = [.red, .blue, .green, .yellow, .orange]
 
     @IBOutlet weak var collectionView: UICollectionView!

@@ -11,7 +11,7 @@ import UIKit
 class ContactListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var contacts=[Contact]()
-    
+    let contactsKey = "contactsKey"
     override func viewDidLoad() {
         super.viewDidLoad()
 //        contacts=Contact.get()
@@ -21,6 +21,7 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate=self
         tableView.dataSource=self
         contacts.append(Contact.init(firstname: "Mama", lastname: "Papa", phone: "7878787878", tagColor: .blue))
+  
         // Do any additional setup after loading the view.
     }
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -33,6 +34,7 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationController?.pushViewController(controller, animated: true)
         
     }
+    
     // MARK: - TableView datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contacts.count

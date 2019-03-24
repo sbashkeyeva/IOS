@@ -32,37 +32,37 @@ enum TagColor : Int, CaseIterable{
         }
     }
 }
-class Contact:NSObject, NSCoding{
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(firstname, forKey: firstNameKey)
-        aCoder.encode(lastname, forKey: lastNameKey)
-        aCoder.encode(phone, forKey: phoneKey)
-        aCoder.encode(tagColor, forKey: tagKey)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        self.firstname = aDecoder.decodeObject(forKey: firstNameKey) as? String ?? ""
-        self.lastname = aDecoder.decodeObject(forKey: lastNameKey) as? String ?? ""
-        self.phone = aDecoder.decodeObject(forKey: phoneKey) as? String ?? ""
-        self.tagColor = aDecoder.decodeObject(forKey: tagKey) as! TagColor
-    }
+class Contact: NSObject, NSCoding {
     
     
-    let defaults = UserDefaults.standard
+    
     var firstname:String
     var lastname:String
     var phone:String
     var tagColor:TagColor
-    let firstNameKey = "firstname"
-    let lastNameKey = "lastname"
-    let phoneKey = "phone"
-    let tagKey = "tag"
     init(firstname:String, lastname:String,phone:String, tagColor:TagColor ) {
         self.firstname=firstname
         self.lastname=lastname
         self.phone=phone
         self.tagColor=tagColor
     }
+    func encode(with aCoder: NSCoder) {
+    aCoder.encode(self.firstname, forKey: "firstname")
+    aCoder.encode(self.lastname,forKey: "lastname")
+    aCoder.encode(self.phone,forKey: "phone")
+    aCoder.encode(self.tagColor,forKey: "tag")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.firstname=aDecoder.decodeObject(forKey: "firstname") as? String ?? ""
+        self.lastname=aDecoder.decodeObject(forKey: "lastname") as? String ?? ""
+        self.phone=aDecoder.decodeObject(forKey: "phone") as? String ?? ""
+        self.tagColor=aDecoder.decodeObject(forKey: "tag") as? TagColor ?? .blue
+//        self.init(firstname:firstname, lastname:lastname, phone:phone, tagColor:tag)
+    }
+    
+    
+    
    
    
 //        for index in 0..<firstname.count{

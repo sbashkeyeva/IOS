@@ -23,7 +23,7 @@ class PhotoService{
             response in
             switch response.result {
             case .success(let value):
-//                print(value)
+               print(value)
                 let photos=JSON(value)["photos"]["photo"].arrayValue
 //                print(photos)
                 var result=[Photo]()
