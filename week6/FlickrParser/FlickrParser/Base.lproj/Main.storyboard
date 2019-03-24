@@ -21,7 +21,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3UE-lU-C1r">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pxl-LD-Me0">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Pxl-LD-Me0">
                                     <size key="itemSize" width="132" height="134"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -41,7 +41,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BWh-k5-yrz">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BWh-k5-yrz">
                                                     <rect key="frame" x="0.0" y="0.0" width="132" height="134"/>
                                                 </imageView>
                                             </subviews>
@@ -79,6 +79,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="zD7-dP-IHE">
+            <objects>
+                <viewController restorationIdentifier="PhotoViewController" storyboardIdentifier="PhotoViewController" id="Fjz-Kb-nG6" customClass="PhotoViewController" customModule="FlickrParser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tjc-6q-kUg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lv8-Gp-xAR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h97-mO-rg0" firstAttribute="bottom" secondItem="Lv8-Gp-xAR" secondAttribute="bottom" id="Bxu-p4-7As"/>
+                            <constraint firstItem="Lv8-Gp-xAR" firstAttribute="top" secondItem="h97-mO-rg0" secondAttribute="top" id="DFT-PW-W74"/>
+                            <constraint firstItem="Lv8-Gp-xAR" firstAttribute="leading" secondItem="h97-mO-rg0" secondAttribute="leading" id="dLY-Lm-OPS"/>
+                            <constraint firstItem="h97-mO-rg0" firstAttribute="trailing" secondItem="Lv8-Gp-xAR" secondAttribute="trailing" id="jcv-cT-rhe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h97-mO-rg0"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoImage" destination="Lv8-Gp-xAR" id="cCP-0M-iqh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7g2-e3-xF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824.8" y="131.78410794602701"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IwL-L3-Mte">

@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class ListOfPhotoViewController: UIViewController{
+class ListOfPhotoViewController: UIViewController, UICollectionViewDelegate{
     var photos:[Photo]=[]
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -45,7 +45,8 @@ class ListOfPhotoViewController: UIViewController{
     */
 
 }
-extension ListOfPhotoViewController:UICollectionViewDataSource, UICollectionViewDelegate{
+// MARK: - Collection View
+extension ListOfPhotoViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(photos.count)
         return photos.count
@@ -59,6 +60,19 @@ extension ListOfPhotoViewController:UICollectionViewDataSource, UICollectionView
         cell.imageURL=photo.url
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoController = storyboard?.instantiateViewController(withIdentifier: "PhotoViewController") as! PhotoViewController
+        photoController.photo=photos[indexPath.row]
+        self.navigationController?.pushViewController(photoController, animated: true)
+        
+    }
     
     
+}
+// MARK: - FlowLayout
+extension ListOfPhotoViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+        let itemWidth=collectionView.bounds.width/3
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
 }
