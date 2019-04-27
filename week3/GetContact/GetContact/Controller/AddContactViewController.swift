@@ -59,9 +59,13 @@ class AddContactViewController: UIViewController, UICollectionViewDelegate, UICo
             return
         }
         let contact = Contact.init(firstname: firstnameField.text ?? "", lastname: lastnameField.text ?? "", phone: phoneField.text ?? "", tagColor: color)
-        
+        let userDefaults = UserDefaults.standard
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: contact)
+        userDefaults.set(encodedData, forKey: "contact")
 //        Contact.oneSave(contact: contact)
         delegate?.didCreateContact(contact: contact)
+        
+//        userDefaults.synchronize()
         self.navigationController?.popViewController(animated: true)
         
     }

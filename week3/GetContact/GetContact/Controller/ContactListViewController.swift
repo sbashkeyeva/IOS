@@ -21,7 +21,27 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.delegate=self
         tableView.dataSource=self
         contacts.append(Contact.init(firstname: "Mama", lastname: "Papa", phone: "7878787878", tagColor: .blue))
-  
+        let userDefaults = UserDefaults.standard
+//        let decoded  = userDefaults.data(forKey: "contact")
+//        let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded!) as! [Contact]
+//        if decodedTeams.count > 0 {
+//            contacts = decodedTeams;
+//            tableView.reloadData()
+//        }
+        // В случае того если в UserDefaults были сохранены контакты прежде, проверяем есть ли контакты с помощью ключа contactsKey
+        guard let contactData = userDefaults.object(forKey: "contact") as? NSData else{
+            print("contacts not found in USerdefaults")
+            return
+        }
+        guard let contactsList = NSKeyedUnarchiver.unarchiveObject(with: contactData as Data) as? [Contact] else {
+            print("Couldn't unarchive from contactData")
+            return
+        }
+        if contactsList.count > 0 {
+            
+            contacts = contactsList;
+            tableView.reloadData()
+        }
         // Do any additional setup after loading the view.
     }
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -72,6 +92,7 @@ class ContactListViewController: UIViewController, UITableViewDelegate, UITableV
 extension ContactListViewController:AddContactDelegate{
     func didCreateContact(contact: Contact) {
         contacts.append(contact)
+    
         tableView.reloadData()
     }
     

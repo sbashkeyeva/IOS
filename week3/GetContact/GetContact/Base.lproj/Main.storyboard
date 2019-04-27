@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="egt-12-y5e">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="egt-12-y5e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="85" id="0aL-oj-Srt" customClass="ContactTableViewCell" customModule="GetContact" customModuleProvider="target">
@@ -59,6 +58,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="egt-12-y5e" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4wp-gH-JVd"/>
+                            <constraint firstItem="egt-12-y5e" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NM7-W9-b68"/>
+                            <constraint firstItem="egt-12-y5e" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cVE-kU-qie"/>
+                            <constraint firstItem="egt-12-y5e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wLo-G5-I9Q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contacts" id="YDv-y6-clf"/>
