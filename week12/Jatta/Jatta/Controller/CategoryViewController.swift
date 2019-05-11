@@ -11,21 +11,18 @@ import UIKit
 class CategoryViewController: UIViewController {
 
     @IBOutlet weak var easyButton: UIButton!
-    
     @IBOutlet weak var hardButton: UIButton!
     @IBOutlet weak var mediumButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         styledButtons()
-        // Do any additional setup after loading the view.
+        let closed=UIBarButtonItem.init(title: "Close", style: .done, target: self, action: #selector(closeTapped))
+        navigationItem.rightBarButtonItem=closed
     }
-
-    
-    
-    
-    
-    
+    @objc func closeTapped(){
+        dismiss(animated: true)
+    }
     // MARK: -Gradient Background
     func createGradientLayer() {
         let gradientLayer = CAGradientLayer()
@@ -74,9 +71,34 @@ class CategoryViewController: UIViewController {
         hardButton.layer.cornerRadius = hardButton.frame.height / 2
         hardButton.setTitle("Hard",for: .normal)
         hardButton.titleLabel?.font=UIFont(name: "GillSans-SemiBold", size: 40)
+        
+        
+        easyButton.addTarget(self, action: #selector(easyTapped), for: .touchUpInside)
+        mediumButton.addTarget(self, action: #selector(mediumTapped), for: .touchUpInside)
+        hardButton.addTarget(self, action: #selector(hardTapped), for: .touchUpInside)
+        
+    }
+    @objc func easyTapped() {
+        showDetail(.easy)
     }
     
+    @objc func mediumTapped() {
+        showDetail(.medium)
+    }
     
+    @objc func hardTapped() {
+        showDetail(.hard)
+    }
+    
+    func showDetail(_ level: WordLevel) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CaruselViewController") as! CaruselViewController
+        vc.level=level
+        let nc = UINavigationController.init(rootViewController: vc)
+        present(nc, animated: true)
+        
+    }
+
 
     /*
     // MARK: - Navigation

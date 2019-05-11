@@ -8,5 +8,6 @@ target 'Jatta' do
   # Pods for Jatta
 pod 'Firebase/Core'
 pod 'Firebase/Database'
-
+pod 'Firebase/Storage'
+pod 'Kingfisher'
 end
