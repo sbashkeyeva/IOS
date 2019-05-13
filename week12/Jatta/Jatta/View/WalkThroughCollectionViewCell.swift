@@ -18,15 +18,8 @@ class WalkThroughCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cntView: UIView!
     
     func setWord(_ card:Card){
-        let imageName=NSUUID().uuidString
-        let storageRef=Storage.storage().reference().child("\(imageName).png")
-        print(imageName)
         titleLabel.text=card.initialWord
-        subTitleLabel.text=card.finalWord
-        print(card.image)
-
-        // HERHERHEHREHREHRHERHEHREHRHERHEHREHRHERHEHRHERHEHRHERHEHRHER
-        let url = URL(string: card.image!)
+        let url = URL(string: card.image)
         imageWalkThrough.kf.setImage(with: url)
 //        imageWalkThrough.setImage(from: URL(string: card.image!)!)
 

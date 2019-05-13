@@ -18,6 +18,7 @@
 		D341C5B0226881E0008888B1 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341C5AF226881E0008888B1 /* UPCarouselFlowLayout.swift */; };
 		D341C5B222688E3E008888B1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341C5B122688E3E008888B1 /* Card.swift */; };
 		D34481A8226243010097393B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34481A7226243010097393B /* CategoryViewController.swift */; };
+		D38C97AD22897B6B00F63C40 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C97AC22897B6B00F63C40 /* QuizViewController.swift */; };
 		D3C89AC62271BB4200478F38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C89AC52271BB4200478F38 /* GoogleService-Info.plist */; };
 		D3C89AC92271BFC100478F38 /* DatabaseRetrieve.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C89AC82271BFC100478F38 /* DatabaseRetrieve.swift */; };
 		D3E4E5942264F8FC0078851E /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4E5932264F8FC0078851E /* BounceButton.swift */; };
@@ -42,6 +43,7 @@
 		D341C5AF226881E0008888B1 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		D341C5B122688E3E008888B1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		D34481A7226243010097393B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		D38C97AC22897B6B00F63C40 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D3C89AC52271BB4200478F38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3C89AC82271BFC100478F38 /* DatabaseRetrieve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRetrieve.swift; sourceTree = "<group>"; };
 		D3E4E5932264F8FC0078851E /* BounceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				D3E4E597226506BE0078851E /* CardViewController.swift */,
 				D341C5A92268763B008888B1 /* CaruselViewController.swift */,
 				D3FD5ED52284477B00F9EAE6 /* ChoiceViewController.swift */,
+				D38C97AC22897B6B00F63C40 /* QuizViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				D341C5AD2268790E008888B1 /* WalkThroughCollectionViewCell.swift in Sources */,
 				D341C5B222688E3E008888B1 /* Card.swift in Sources */,
 				D34481A8226243010097393B /* CategoryViewController.swift in Sources */,
+				D38C97AD22897B6B00F63C40 /* QuizViewController.swift in Sources */,
 				D341A9172260AFDB00305EDB /* AppDelegate.swift in Sources */,
 				D341C5AA2268763B008888B1 /* CaruselViewController.swift in Sources */,
 				D3E4E596226502170078851E /* CardView.swift in Sources */,

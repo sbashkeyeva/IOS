@@ -10,6 +10,10 @@ import UIKit
 import FirebaseDatabase
 import FirebaseStorage
 
+protocol  CaruselDelegate {
+    func didSendWord(card:Card)
+}
+
 enum WordLevel: String {
     case easy="easy"
     case medium="medium"
@@ -25,6 +29,9 @@ class CaruselViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     var cards=[Card]()
     var level: WordLevel = .hard
+    let wordsKey = "wordsKey"
+    let userDefaults = UserDefaults.standard
+    var delegate: CaruselDelegate?
     
     @IBOutlet weak var walkThroughCollectionView:UICollectionView!
     
@@ -32,8 +39,6 @@ class CaruselViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchWord()
-        
-        
         let closeButton = UIBarButtonItem.init(title: "Close", style: .done, target: self, action: #selector(closeTapped))
         navigationItem.rightBarButtonItem = closeButton
         
@@ -66,10 +71,10 @@ class CaruselViewController: UIViewController, UICollectionViewDelegate, UIColle
                 if let words = snapshot.value as? [Any] {
                     for word in words {
                         let word2 = word as? [String: Any]
-                        let card = Card()
-                        card.initialWord = word2?["init_word"] as? String
-                        card.finalWord = word2?["fin_word"] as? String
-                        card.image = word2?["image"] as? String
+                        let card = Card(initialWord: word2?["init_word"] as! String , finalWord: word2?["fin_word"] as! String, image: word2?["image"] as! String)
+//                        card.initialWord = word2?["init_word"] as? String
+//                        card.finalWord = word2?["fin_word"] as? String
+//                        card.image = word2?["image"] as? String
                         self.cards.append(card)
                         DispatchQueue.main.async {
                             self.walkThroughCollectionView.reloadData()
@@ -89,7 +94,6 @@ class CaruselViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     // MARK: - UICollectionView Delegate and DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return dataWords.count
 //        return min(5, cards.count)
         return cards.count
     }
@@ -103,28 +107,30 @@ class CaruselViewController: UIViewController, UICollectionViewDelegate, UIColle
         } else {
         
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "walkThroughIdentifier", for: indexPath) as! WalkThroughCollectionViewCell
-    //        cell.titleLabel.text="Title - \(indexPath.row+1)"
-    //        let dataWord=dataWords[indexPath.row]
-    //        cell.titleLabel.text=dataWords[indexPath.row]
             let word = cards[indexPath.row]
             cell.setWord(word)
-    //        cell.titleLabel.text=cards[indexPath.row].initialWord
-    //        cell.subTitleLabel.text=cards[indexPath.row].finalWord
             return cell
         }
     }
+    let userdefaults=UserDefaults.standard
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            print("selected item -- \(indexPath.row)")
+        print("selected item -- \(indexPath.row)")
+        let word=cards[indexPath.item]
+//        let id = 5
+//        UserDefaults.standard.setValue([id], forKey: "LastPassedId")
+//        var v = UserDefaults.standard.value(forKey: "LastPassedId")
+//        UserDefaults.standard.removeObject(forKey: "12312")
         
+        let userDefaults = UserDefaults.standard
+        let encodedData:Data = NSKeyedArchiver.archivedData(withRootObject: word)
+        userDefaults.set(encodedData, forKey: wordsKey)
+        userDefaults.synchronize()
+        let decoded  = userDefaults.data(forKey: wordsKey)
+        let decodedTeam = NSKeyedUnarchiver.unarchiveObject(with: decoded!) as! Card
+        print("decoded trams")
+        print(decodedTeam)
+        delegate?.didSendWord(card: decodedTeam)
         
-        let id = 5
-        UserDefaults.standard.setValue([id], forKey: "LastPassedId")
-        
-        var v = UserDefaults.standard.value(forKey: "LastPassedId")
-        
-        
-        
-        UserDefaults.standard.removeObject(forKey: "12312")
     }
     
 
