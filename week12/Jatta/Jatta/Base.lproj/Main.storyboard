@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGZ-Rm-njV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="9"/>
+            <point key="canvasLocation" x="1881" y="9"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="Uzx-0n-txk">
@@ -247,33 +247,6 @@
             </objects>
             <point key="canvasLocation" x="2613.04347826087" y="12.723214285714285"/>
         </scene>
-        <!--Quiz View Controller-->
-        <scene sceneID="oF7-96-AoY">
-            <objects>
-                <viewController restorationIdentifier="QuizViewController" storyboardIdentifier="QuizViewController" id="bli-ZY-cns" customClass="QuizViewController" customModule="Jatta" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WWq-0v-qlg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDJ-qC-EHv">
-                                <rect key="frame" x="59" y="106" width="250" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Hgn-eb-7Wd"/>
-                    </view>
-                    <connections>
-                        <outlet property="initWordLabel" destination="KDJ-qC-EHv" id="525-hu-lf1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f1P-zp-ggD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1181" y="9"/>
-        </scene>
         <!--Choice View Controller-->
         <scene sceneID="Xzj-Ee-1gd">
             <objects>
@@ -326,6 +299,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbY-W6-E45" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-430.43478260869568" y="20.758928571428569"/>
+        </scene>
+        <!--Quiz View Controller-->
+        <scene sceneID="1Q3-81-IHf">
+            <objects>
+                <viewController restorationIdentifier="QuizViewController" storyboardIdentifier="QuizViewController" id="SKu-ns-aOg" customClass="QuizViewController" customModule="Jatta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CAD-jd-Agy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WAi-ky-hai">
+                                <rect key="frame" x="0.0" y="94" width="414" height="668"/>
+                                <color key="backgroundColor" red="0.35777416639999998" green="0.25113631079999998" blue="0.85703521569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mm3-8E-rsg">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="rMi-ra-Miz" customClass="WalkThroughCollectionViewCell" customModule="Jatta" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35777416639999998" green="0.25113631079999998" blue="0.85703521569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fao-TI-mN9" firstAttribute="trailing" secondItem="WAi-ky-hai" secondAttribute="trailing" id="3ds-5F-td8"/>
+                            <constraint firstItem="WAi-ky-hai" firstAttribute="leading" secondItem="fao-TI-mN9" secondAttribute="leading" id="DaX-dw-uU7"/>
+                            <constraint firstItem="fao-TI-mN9" firstAttribute="bottom" secondItem="WAi-ky-hai" secondAttribute="bottom" constant="100" id="Xql-eC-Uud"/>
+                            <constraint firstItem="WAi-ky-hai" firstAttribute="top" secondItem="fao-TI-mN9" secondAttribute="top" constant="50" id="dvg-9H-EAo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fao-TI-mN9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bat-Du-Pag"/>
+                    <connections>
+                        <outlet property="walkThroughCollectionView" destination="WAi-ky-hai" id="6xf-IQ-dDd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="seI-8S-90k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124.6376811594205" y="8.7053571428571423"/>
         </scene>
     </scenes>
     <resources>

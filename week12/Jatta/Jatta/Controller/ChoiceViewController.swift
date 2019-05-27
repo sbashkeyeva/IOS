@@ -41,7 +41,7 @@ class ChoiceViewController: UIViewController {
         reviseButton.layer.shadowRadius = 1.0
         reviseButton.layer.shadowOpacity = 0.5
         reviseButton.layer.cornerRadius = reviseButton.frame.height / 2
-        reviseButton.setTitle("Let's warm up!",for: .normal)
+        reviseButton.setTitle("Let's revise it!",for: .normal)
         reviseButton.titleLabel?.font=UIFont(name: "GillSans-SemiBold", size: 20)
         learnButton.layer.shadowColor = UIColor.black.cgColor
         learnButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
