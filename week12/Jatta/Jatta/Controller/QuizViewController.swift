@@ -8,20 +8,20 @@
 
 import UIKit
 
-class QuizViewController: UIViewController,CaruselDelegate {
-    @IBOutlet weak var initWordLabel: UILabel!
-    func didSendWord(card: Card) {
-        initWordLabel.text=card.initialWord
-    }
+class QuizViewController: UIViewController{
     
-
+    @IBOutlet weak var initWordLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let controller=storyboard?.instantiateViewController(withIdentifier: "CaruselViewController") as! CaruselViewController
-        controller.delegate=self
-        print(controller.cards.count)
-        // Do any additional setup after loading the view.
+        let closeButton = UIBarButtonItem.init(title: "Close", style: .done, target: self, action: #selector(closeTapped))
+        navigationItem.rightBarButtonItem = closeButton
     }
+    @objc func closeTapped(){
+        dismiss(animated: true)
+    }
+    
+    
+    
     
 
     /*
@@ -33,5 +33,6 @@ class QuizViewController: UIViewController,CaruselDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }

@@ -11,6 +11,7 @@ class Card: NSObject, NSCoding {
     var initialWord:String
     var finalWord:String
     var image:String
+    
     init(initialWord:String, finalWord:String, image:String) {
         self.initialWord=initialWord
         self.finalWord=finalWord

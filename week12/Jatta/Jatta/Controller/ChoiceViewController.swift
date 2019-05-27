@@ -62,7 +62,7 @@ class ChoiceViewController: UIViewController {
         showDetail()
     }
     @objc func reviseTapped(){
-        showDetail()
+        showQuiz()
     }
     func showDetail(){
         let storyboard=UIStoryboard.init(name: "Main", bundle: nil)
@@ -70,7 +70,13 @@ class ChoiceViewController: UIViewController {
         let nc=UINavigationController.init(rootViewController: vc)
         present(nc, animated: true)
     }
-    
+    func showQuiz(){
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "QuizViewController") as! QuizViewController
+        let nc = UINavigationController.init(rootViewController: vc)
+        present(nc, animated: true)
+    }
+
 
     /*
     // MARK: - Navigation

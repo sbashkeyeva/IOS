@@ -1,28 +1,16 @@
 //
-//  WalkThroughCollectionViewCell.swift
+//  FinalCollectionViewCell.swift
 //  Jatta
 //
-//  Created by Symbat Bashkeyeva on 4/18/19.
+//  Created by Symbat Bashkeyeva on 5/16/19.
 //  Copyright © 2019 Symbat Bashkeyeva. All rights reserved.
 //
 
 import UIKit
-import FirebaseStorage
-import Kingfisher
 
-class WalkThroughCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageWalkThrough: UIImageView!
-    @IBOutlet weak var subTitleLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
+class FinalCollectionViewCell: UICollectionViewCell {
+
     @IBOutlet weak var cntView: UIView!
-    
-    func setWord(_ card:Card){
-        titleLabel.text=card.initialWord
-        subTitleLabel.text=card.finalWord
-        let url = URL(string: card.image)
-        imageWalkThrough.kf.setImage(with: url)
-
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,5 +24,5 @@ class WalkThroughCollectionViewCell: UICollectionViewCell {
             self.cntView.layer.shouldRasterize=true
         }
     }
-
+    
 }

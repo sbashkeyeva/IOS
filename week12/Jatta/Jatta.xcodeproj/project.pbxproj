@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BB6F24F320794C13A603FBDB /* Pods_Jatta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AB95257F7859DB33E449BB /* Pods_Jatta.framework */; };
+		D340E134228CA2BE00C929B1 /* FinalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340E132228CA2BE00C929B1 /* FinalCollectionViewCell.swift */; };
+		D340E135228CA2BE00C929B1 /* FinalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D340E133228CA2BE00C929B1 /* FinalCollectionViewCell.xib */; };
+		D340F87F228AD923009C62D9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340F87E228AD923009C62D9 /* TestViewController.swift */; };
+		D340F883228B3FAF009C62D9 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340F882228B3FAF009C62D9 /* CardTableViewCell.swift */; };
 		D341A9172260AFDB00305EDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341A9162260AFDB00305EDB /* AppDelegate.swift */; };
 		D341A91C2260AFDB00305EDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D341A91A2260AFDB00305EDB /* Main.storyboard */; };
 		D341A91E2260AFDE00305EDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D341A91D2260AFDE00305EDB /* Assets.xcassets */; };
@@ -20,7 +24,6 @@
 		D34481A8226243010097393B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34481A7226243010097393B /* CategoryViewController.swift */; };
 		D38C97AD22897B6B00F63C40 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C97AC22897B6B00F63C40 /* QuizViewController.swift */; };
 		D3C89AC62271BB4200478F38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C89AC52271BB4200478F38 /* GoogleService-Info.plist */; };
-		D3C89AC92271BFC100478F38 /* DatabaseRetrieve.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C89AC82271BFC100478F38 /* DatabaseRetrieve.swift */; };
 		D3E4E5942264F8FC0078851E /* BounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4E5932264F8FC0078851E /* BounceButton.swift */; };
 		D3E4E596226502170078851E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4E595226502170078851E /* CardView.swift */; };
 		D3E4E598226506BE0078851E /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4E597226506BE0078851E /* CardViewController.swift */; };
@@ -31,6 +34,10 @@
 		0CC8D689546CE03B9C1A2BCD /* Pods-Jatta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jatta.debug.xcconfig"; path = "Target Support Files/Pods-Jatta/Pods-Jatta.debug.xcconfig"; sourceTree = "<group>"; };
 		83AB95257F7859DB33E449BB /* Pods_Jatta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jatta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9FE3022591C5C4687E49FE /* Pods-Jatta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jatta.release.xcconfig"; path = "Target Support Files/Pods-Jatta/Pods-Jatta.release.xcconfig"; sourceTree = "<group>"; };
+		D340E132228CA2BE00C929B1 /* FinalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCollectionViewCell.swift; sourceTree = "<group>"; };
+		D340E133228CA2BE00C929B1 /* FinalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinalCollectionViewCell.xib; sourceTree = "<group>"; };
+		D340F87E228AD923009C62D9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		D340F882228B3FAF009C62D9 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		D341A9132260AFDB00305EDB /* Jatta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jatta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D341A9162260AFDB00305EDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D341A91B2260AFDB00305EDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,7 +52,6 @@
 		D34481A7226243010097393B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D38C97AC22897B6B00F63C40 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D3C89AC52271BB4200478F38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D3C89AC82271BFC100478F38 /* DatabaseRetrieve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRetrieve.swift; sourceTree = "<group>"; };
 		D3E4E5932264F8FC0078851E /* BounceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
 		D3E4E595226502170078851E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D3E4E597226506BE0078851E /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +100,6 @@
 		D341A9152260AFDB00305EDB /* Jatta */ = {
 			isa = PBXGroup;
 			children = (
-				D3C89AC72271BFA700478F38 /* Networking */,
 				D341C5B32268C83F008888B1 /* Supporting Files */,
 				D341C5AF226881E0008888B1 /* UPCarouselFlowLayout.swift */,
 				D3E4E5902264F88C0078851E /* CustomControl */,
@@ -123,6 +128,9 @@
 				D3E4E595226502170078851E /* CardView.swift */,
 				D341C5AB2268790E008888B1 /* WalkThroughCollectionViewCell.swift */,
 				D341C5AC2268790E008888B1 /* WalkThroughCollectionViewCell.xib */,
+				D340F882228B3FAF009C62D9 /* CardTableViewCell.swift */,
+				D340E132228CA2BE00C929B1 /* FinalCollectionViewCell.swift */,
+				D340E133228CA2BE00C929B1 /* FinalCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 				D34481A7226243010097393B /* CategoryViewController.swift */,
 				D3E4E597226506BE0078851E /* CardViewController.swift */,
 				D341C5A92268763B008888B1 /* CaruselViewController.swift */,
+				D340F87E228AD923009C62D9 /* TestViewController.swift */,
 				D3FD5ED52284477B00F9EAE6 /* ChoiceViewController.swift */,
 				D38C97AC22897B6B00F63C40 /* QuizViewController.swift */,
 			);
@@ -146,14 +155,6 @@
 				D3C89AC52271BB4200478F38 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D3C89AC72271BFA700478F38 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				D3C89AC82271BFC100478F38 /* DatabaseRetrieve.swift */,
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		D3E4E5902264F88C0078851E /* CustomControl */ = {
@@ -237,6 +238,7 @@
 				D3C89AC62271BB4200478F38 /* GoogleService-Info.plist in Resources */,
 				D341A91C2260AFDB00305EDB /* Main.storyboard in Resources */,
 				D341C5AE2268790E008888B1 /* WalkThroughCollectionViewCell.xib in Resources */,
+				D340E135228CA2BE00C929B1 /* FinalCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,15 +305,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D341C5AD2268790E008888B1 /* WalkThroughCollectionViewCell.swift in Sources */,
+				D340E134228CA2BE00C929B1 /* FinalCollectionViewCell.swift in Sources */,
 				D341C5B222688E3E008888B1 /* Card.swift in Sources */,
 				D34481A8226243010097393B /* CategoryViewController.swift in Sources */,
 				D38C97AD22897B6B00F63C40 /* QuizViewController.swift in Sources */,
 				D341A9172260AFDB00305EDB /* AppDelegate.swift in Sources */,
+				D340F87F228AD923009C62D9 /* TestViewController.swift in Sources */,
 				D341C5AA2268763B008888B1 /* CaruselViewController.swift in Sources */,
 				D3E4E596226502170078851E /* CardView.swift in Sources */,
+				D340F883228B3FAF009C62D9 /* CardTableViewCell.swift in Sources */,
 				D3E4E598226506BE0078851E /* CardViewController.swift in Sources */,
 				D341C5B0226881E0008888B1 /* UPCarouselFlowLayout.swift in Sources */,
-				D3C89AC92271BFC100478F38 /* DatabaseRetrieve.swift in Sources */,
 				D3E4E5942264F8FC0078851E /* BounceButton.swift in Sources */,
 				D3FD5ED62284477B00F9EAE6 /* ChoiceViewController.swift in Sources */,
 			);
