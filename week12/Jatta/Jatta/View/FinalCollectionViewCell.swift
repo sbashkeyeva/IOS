@@ -10,8 +10,15 @@ import UIKit
 
 class FinalCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var learnedLabel: UILabel!
     @IBOutlet weak var cntView: UIView!
+    
+    func setScore(wordcount:Int){
+        learnedLabel.font = UIFont (name: "Helvetica Neue", size: 30)
+        learnedLabel.text="You've learned \(wordcount) words!"
+    }
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         // Initialization code
         DispatchQueue.main.async {

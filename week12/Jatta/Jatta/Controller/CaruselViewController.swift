@@ -47,6 +47,7 @@ class CaruselViewController: UIViewController, UICollectionViewDelegate, UIColle
         flowLayout.sideItemAlpha = 1.0
         flowLayout.spacingMode = .fixed(spacing: 5.0)
         walkThroughCollectionView.collectionViewLayout=flowLayout
+        
         walkThroughCollectionView.delegate = self
         walkThroughCollectionView.dataSource = self
     }
@@ -139,6 +140,8 @@ class CaruselViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         if ((indexPath.row) == 5) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FinalCollectionViewCell", for: indexPath) as! FinalCollectionViewCell
+            print("finalCollectionview: \(selectedCards.count)")
+            cell.setScore(wordcount: selectedCards.count)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "walkThroughIdentifier", for: indexPath) as! WalkThroughCollectionViewCell
@@ -154,14 +157,22 @@ class CaruselViewController: UIViewController, UICollectionViewDelegate, UIColle
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 5, options: [],animations: {cell!.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)},completion: { finished in UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 5,animations: {
             cell!.transform = CGAffineTransform(scaleX: 1, y: 1)},completion: nil)})
         
+//        let character = cards[(indexPath as NSIndexPath).row]
+//        let alert = UIAlertController(title: "Печальяно", message: nil, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        present(alert, animated: true, completion: nil)
         let word=cards[indexPath.item]
-        
+//        self.walkThroughCollectionView.scrollToItem(at:IndexPath(item: indexPath.item+1, section: indexPath.section), at: .left, animated: false)
+
+//        walkThroughCollectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         if indexPath.item == 5{
             let storyboard=UIStoryboard.init(name: "Main", bundle: nil)
             let vc=storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
             let nc=UINavigationController.init(rootViewController: vc)
             present(nc, animated: true)
         }else{
+//            walkThroughCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition(rawValue: 30))
+
             if !selectedCards.isEmpty{
                 if !selectedCards.contains(word){
                     selectedCards.append(word)
@@ -184,6 +195,31 @@ class CaruselViewController: UIViewController, UICollectionViewDelegate, UIColle
         userDefaults.set(encodedData, forKey: wordsKey)
         userDefaults.synchronize()
         
+    }
+    fileprivate var currentPage: Int = 0 {
+        didSet {
+            let character = self.cards[self.currentPage]
+        }
+    }
+    fileprivate var pageSize: CGSize {
+        let layout = self.walkThroughCollectionView.collectionViewLayout as! UPCarouselFlowLayout
+        var pageSize = layout.itemSize
+        if layout.scrollDirection == .horizontal {
+            pageSize.width += layout.minimumLineSpacing
+        } else {
+            pageSize.height += layout.minimumLineSpacing
+        }
+        return pageSize
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let layout = self.walkThroughCollectionView.collectionViewLayout as! UPCarouselFlowLayout
+        let pageSide = (layout.scrollDirection == .horizontal) ? self.pageSize.width : self.pageSize.height
+        let offset = (layout.scrollDirection == .horizontal) ? scrollView.contentOffset.x : scrollView.contentOffset.y
+        currentPage = Int(floor((offset - pageSide / 2) / pageSide) + 1)
+        
+        // add these two lines
+        let indexPath = IndexPath(item: currentPage, section: 0)
+        collectionView(self.walkThroughCollectionView, didSelectItemAt: indexPath)
     }
   
     

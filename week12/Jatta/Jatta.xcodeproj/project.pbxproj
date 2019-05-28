@@ -21,6 +21,11 @@
 		D341C5AE2268790E008888B1 /* WalkThroughCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D341C5AC2268790E008888B1 /* WalkThroughCollectionViewCell.xib */; };
 		D341C5B0226881E0008888B1 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341C5AF226881E0008888B1 /* UPCarouselFlowLayout.swift */; };
 		D341C5B222688E3E008888B1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341C5B122688E3E008888B1 /* Card.swift */; };
+		D342D3C3229D067700993C17 /* ReviseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342D3C2229D067700993C17 /* ReviseViewController.swift */; };
+		D342D3C5229D086500993C17 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342D3C4229D086500993C17 /* Problem.swift */; };
+		D342D3C7229D089300993C17 /* ProblemGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342D3C6229D089300993C17 /* ProblemGenerator.swift */; };
+		D342D3C9229D0A1B00993C17 /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342D3C8229D0A1B00993C17 /* QuizManager.swift */; };
+		D342D3CB229D223500993C17 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342D3CA229D223500993C17 /* FinalViewController.swift */; };
 		D34481A8226243010097393B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34481A7226243010097393B /* CategoryViewController.swift */; };
 		D38C97AD22897B6B00F63C40 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C97AC22897B6B00F63C40 /* QuizViewController.swift */; };
 		D3C89AC62271BB4200478F38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C89AC52271BB4200478F38 /* GoogleService-Info.plist */; };
@@ -49,6 +54,11 @@
 		D341C5AC2268790E008888B1 /* WalkThroughCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkThroughCollectionViewCell.xib; sourceTree = "<group>"; };
 		D341C5AF226881E0008888B1 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		D341C5B122688E3E008888B1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		D342D3C2229D067700993C17 /* ReviseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviseViewController.swift; sourceTree = "<group>"; };
+		D342D3C4229D086500993C17 /* Problem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		D342D3C6229D089300993C17 /* ProblemGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemGenerator.swift; sourceTree = "<group>"; };
+		D342D3C8229D0A1B00993C17 /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
+		D342D3CA229D223500993C17 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 		D34481A7226243010097393B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D38C97AC22897B6B00F63C40 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		D3C89AC52271BB4200478F38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -118,6 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				D341C5B122688E3E008888B1 /* Card.swift */,
+				D342D3C4229D086500993C17 /* Problem.swift */,
+				D342D3C6229D089300993C17 /* ProblemGenerator.swift */,
+				D342D3C8229D0A1B00993C17 /* QuizManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +157,8 @@
 				D340F87E228AD923009C62D9 /* TestViewController.swift */,
 				D3FD5ED52284477B00F9EAE6 /* ChoiceViewController.swift */,
 				D38C97AC22897B6B00F63C40 /* QuizViewController.swift */,
+				D342D3C2229D067700993C17 /* ReviseViewController.swift */,
+				D342D3CA229D223500993C17 /* FinalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,13 +320,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D341C5AD2268790E008888B1 /* WalkThroughCollectionViewCell.swift in Sources */,
+				D342D3C3229D067700993C17 /* ReviseViewController.swift in Sources */,
 				D340E134228CA2BE00C929B1 /* FinalCollectionViewCell.swift in Sources */,
 				D341C5B222688E3E008888B1 /* Card.swift in Sources */,
+				D342D3C9229D0A1B00993C17 /* QuizManager.swift in Sources */,
 				D34481A8226243010097393B /* CategoryViewController.swift in Sources */,
 				D38C97AD22897B6B00F63C40 /* QuizViewController.swift in Sources */,
 				D341A9172260AFDB00305EDB /* AppDelegate.swift in Sources */,
 				D340F87F228AD923009C62D9 /* TestViewController.swift in Sources */,
 				D341C5AA2268763B008888B1 /* CaruselViewController.swift in Sources */,
+				D342D3C7229D089300993C17 /* ProblemGenerator.swift in Sources */,
+				D342D3C5229D086500993C17 /* Problem.swift in Sources */,
+				D342D3CB229D223500993C17 /* FinalViewController.swift in Sources */,
 				D3E4E596226502170078851E /* CardView.swift in Sources */,
 				D340F883228B3FAF009C62D9 /* CardTableViewCell.swift in Sources */,
 				D3E4E598226506BE0078851E /* CardViewController.swift in Sources */,

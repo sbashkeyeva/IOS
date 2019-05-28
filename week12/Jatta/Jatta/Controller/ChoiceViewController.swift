@@ -10,6 +10,7 @@ import UIKit
 
 class ChoiceViewController: UIViewController {
 
+    @IBOutlet weak var quizButton: UIButton!
     @IBOutlet weak var reviseButton: UIButton!
     @IBOutlet weak var learnButton: UIButton!
     override func viewDidLoad() {
@@ -53,16 +54,28 @@ class ChoiceViewController: UIViewController {
         learnButton.titleLabel?.font=UIFont(name: "GillSans-SemiBold", size: 20)
         learnButton.layer.shadowColor = UIColor.black.cgColor
         learnButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        
+        quizButton.layer.shadowColor = UIColor.black.cgColor
+        quizButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        quizButton.layer.masksToBounds = false
+        quizButton.layer.shadowRadius = 1.0
+        quizButton.layer.shadowOpacity = 0.5
+        quizButton.layer.cornerRadius = reviseButton.frame.height / 2
+        quizButton.setTitle("Quiz Up!",for: .normal)
+        quizButton.titleLabel?.font=UIFont(name: "GillSans-SemiBold", size: 20)
         
         learnButton.addTarget(self, action: #selector(learnTapped), for: .touchUpInside)
         reviseButton.addTarget(self, action: #selector(reviseTapped), for: .touchUpInside)
+        quizButton.addTarget(self, action: #selector(quizTapped), for: .touchUpInside)
+        
     }
     @objc func learnTapped(){
         showDetail()
     }
     @objc func reviseTapped(){
         showQuiz()
+    }
+    @objc func quizTapped(){
+        showRevise()
     }
     func showDetail(){
         let storyboard=UIStoryboard.init(name: "Main", bundle: nil)
@@ -73,6 +86,12 @@ class ChoiceViewController: UIViewController {
     func showQuiz(){
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "QuizViewController") as! QuizViewController
+        let nc = UINavigationController.init(rootViewController: vc)
+        present(nc, animated: true)
+    }
+    func showRevise(){
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ReviseViewController") as! ReviseViewController
         let nc = UINavigationController.init(rootViewController: vc)
         present(nc, animated: true)
     }
