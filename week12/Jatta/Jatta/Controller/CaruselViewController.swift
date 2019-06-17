@@ -123,10 +123,9 @@ class CaruselViewController: UIViewController, UICollectionViewDelegate, UIColle
                         self.walkThroughCollectionView.reloadData()
                     }
                 }
-            print("suka okonchatel'nyi fetch word : \(self.cards)")
+            print("okonchatel'nyi fetch word : \(self.cards)")
             self.removeElements(cards: self.cards)
         }
-        print("blya fetch word : \(self.cards)")
         print ("cards \(cards)")
 //        removeElements(cards: self.cards)
         print ("cards \(self.cards)")
